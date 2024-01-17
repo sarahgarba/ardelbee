@@ -13,7 +13,7 @@ function QuickFilter() {
   const [solutionFilter, setSolutionFilter] = useState('');
   const [zoneFilter, setZoneFilter] = useState('');
   const [startDate, setStartDate] = useState<Date | null>(null);
-
+  
   const handleDateFilterChange = (date: Date | null): void => {
     setStartDate(date);
     // Perform an appropriate action here, such as updating the list of displayed items
@@ -33,6 +33,7 @@ function QuickFilter() {
     setZoneFilter(event.target.value);
     // Effectuez une action appropriée ici, comme la mise à jour de la liste des éléments affichés
   };
+
 
   return (
     <div className='flex flex-row gap-2 justify-around mx-6'>
@@ -67,6 +68,7 @@ function QuickFilter() {
         </select>
       
     </div>
+    
   );
 }
 
