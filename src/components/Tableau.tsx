@@ -1,8 +1,8 @@
-'use client'
+"use client"
 import React, { useState } from 'react';
 
 function Table() {
-  const [selectedRows, setSelectedRows] = useState([]);
+  const [selectedRows, setSelectedRows] = useState<number[]>([]);
 
   const data = [
     { numero: 1, zone: 'Zone A', problemes: 'Problème 1', solutions: 'Solution 1', secteur: 'Secteur 1' },
@@ -12,7 +12,7 @@ function Table() {
     { numero: 5, zone: 'Zone E', problemes: 'Problème 5', solutions: 'Solution 5', secteur: 'Secteur 5' },
   ];
 
-   const handleRowSelect = (numero) => {
+   const handleRowSelect = (numero : number) => {
     if (selectedRows.includes(numero)) {
       setSelectedRows(selectedRows.filter((row) => row !== numero));
     } else {

@@ -1,4 +1,4 @@
-'use client'
+"use client"
 import React, { useState } from 'react';
 import { IoMdSearch } from "react-icons/io";
 
@@ -6,7 +6,7 @@ import { IoMdSearch } from "react-icons/io";
 function SearchBar() {
   const [searchValue, setSearchValue] = useState('');
 
-  const handleSearchChange = (event) => {
+  const handleSearchChange = (event : React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(event.target.value);
     // Effectuez une action appropriée ici, comme la mise à jour de la liste des résultats
   };

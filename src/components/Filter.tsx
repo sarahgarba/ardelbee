@@ -1,8 +1,9 @@
-'use client'
+"use client"
 import React, { useState } from 'react';
 import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
+import { ChangeEvent } from 'react';
 
 function QuickFilter() {
 
@@ -11,25 +12,24 @@ function QuickFilter() {
   const [sectorFilter, setSectorFilter] = useState('');
   const [solutionFilter, setSolutionFilter] = useState('');
   const [zoneFilter, setZoneFilter] = useState('');
-  const [startDate, setStartDate] = useState(new Date());
+  const [startDate, setStartDate] = useState<Date | null>(null);
 
-
-  const handleDateFilterChange = (event) => {
-    setDateFilter(event.target.value);
-    // Effectuez une action appropriée ici, comme la mise à jour de la liste des éléments affichés
+  const handleDateFilterChange = (date: Date | null): void => {
+    setStartDate(date);
+    // Perform an appropriate action here, such as updating the list of displayed items
   };
 
-  const handleSectorFilterChange = (event) => {
+  const handleSectorFilterChange = (event: ChangeEvent<HTMLSelectElement>): void =>  {
     setSectorFilter(event.target.value);
     // Effectuez une action appropriée ici, comme la mise à jour de la liste des éléments affichés
   };
 
-  const handleSolutionFilterChange = (event) => {
+  const handleSolutionFilterChange = (event: ChangeEvent<HTMLInputElement>): void =>  {
     setSolutionFilter(event.target.value);
     // Effectuez une action appropriée ici, comme la mise à jour de la liste des éléments affichés
   };
 
-  const handleZoneFilterChange = (event) => {
+  const handleZoneFilterChange = (event: ChangeEvent<HTMLSelectElement>): void =>  {
     setZoneFilter(event.target.value);
     // Effectuez une action appropriée ici, comme la mise à jour de la liste des éléments affichés
   };
@@ -39,8 +39,8 @@ function QuickFilter() {
       <input type="text" disabled placeholder="Filtrer par date..." />
       <DatePicker 
          selected={startDate}
-         className=" bg-gray-50 border w-48 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" 
-         onChange={(date) => setStartDate(date)} />
+         className=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" 
+         onChange={(date: Date | null) => handleDateFilterChange(date)} />
       <select
             id="secteur"
             className=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
