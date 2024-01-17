@@ -1,0 +1,36 @@
+#container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr; /* Réglez la largeur des colonnes selon vos besoins */
+    grid-gap: 10px; /* Ajoutez un espacement entre les éléments */
+  }
+  
+  #sidebar {
+    grid-column: 1; /* Placez le contenu de la barre latérale dans la première colonne */
+  }
+  
+  #header {
+    grid-column: 2 / span 2; /* Placez le contenu de l'en-tête dans les colonnes 2 et 3 */
+  }
+  
+  #children {
+    grid-column: 2 / span 2; /* Placez le contenu principal dans les colonnes 2 et 3 */
+  }
+
+  
+  #container1 {
+    display: grid;
+    grid-template-rows: auto auto 1fr; /* Réglez la hauteur des lignes selon vos besoins */
+    grid-gap: 10px; /* Ajoutez un espacement entre les éléments */
+  }
+  
+  #Navigation {
+    grid-row: 1; /* Placez le composant de navigation dans la première ligne */
+  }
+  
+  #TabBar {
+    grid-row: 2; /* Placez le composant de barre d'onglets dans la deuxième ligne */
+  }
+  
+  #children1 {
+    grid-row: 3; /* Placez le contenu principal dans la troisième ligne */
+  }
