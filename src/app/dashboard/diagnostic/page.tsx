@@ -11,7 +11,7 @@ import { ChangeEvent } from 'react';
 export default function DiagnosticRecent() {
     
     function handleSearchChange(event: any): void {
-        // Handle the change event
+        // Handle the change eventt
       }
 
     return (
