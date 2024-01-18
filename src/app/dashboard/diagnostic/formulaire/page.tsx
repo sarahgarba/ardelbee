@@ -6,7 +6,10 @@ interface DiagnosticType{
     probleme: string,
     date: string,
     solution: string,
-    secteur: string
+    secteur: string,
+    causes: string,
+    effets: string,
+    opportunites: string,
 }
 
 export default function DiagnosticFormulaire() {
@@ -29,6 +32,9 @@ export default function DiagnosticFormulaire() {
             date: new Date().toLocaleDateString(),
             solution: 'Solution à définir',
             secteur: secteur,
+            causes: causes,
+            effets: effets,
+            opportunites: opportunites,
           };
       
           // Ajout du diagnostic à la liste
@@ -120,6 +126,9 @@ export default function DiagnosticFormulaire() {
               <th className='text-left'>Date</th>
               <th className='text-left'>Solution</th>
               <th className='text-left'>Secteur</th>
+              <th className='text-left'>Causes</th>
+              <th className='text-left'>Effets</th>
+              <th className='text-left'>Opportunités</th>
             </tr>
           </thead>
           <tbody>
@@ -130,17 +139,14 @@ export default function DiagnosticFormulaire() {
                 <td>{diag.date}</td>
                 <td>{diag.solution}</td>
                 <td>{diag.secteur}</td>
+                <td>{diag.causes}</td>
+                <td>{diag.effets}</td>
+                <td>{diag.opportunites}</td>
               </tr>
             ))}
           </tbody>
         </table>
       )}
-
-          
-       {diagnostics.length > 0 && (
-        <button onClick={() => console.log('Voir plus')}>Voir plus</button> 
-    
-        )}
 
             
 
